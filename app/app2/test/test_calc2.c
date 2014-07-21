@@ -10,29 +10,44 @@ void tearDown(void)
 {
 }
 
-void test_module_generator_needs_to_be_implemented1(void)
+void test_addsub_1(void)
 {
-	args_t tmp;
+	args_t args1;
+	args1.a = 10;
+	args1.b = 5;
 
-	tmp.a = 111;
-	tmp.b = 5;
-	createArgs_ExpectAndReturn(10, 5, &tmp);
+	args_t args2;
+	args2.a = 10;
+	args2.b = 5;
 
-	int result = calc2(10, 5);
+	// packageのcreateArgsモックの動作を定義する。
+	createArgs_ExpectAndReturn(10, 5, &args1);
+	// packageのaddArgsモックの動作を定義する。
+	addArgs_ExpectAndReturn(&args2, 15);
+	// packageのsubArgsモックの動作を定義する。
+	subArgs_ExpectAndReturn(&args2, 5);
+	int result = addsub(10, 5);
 
-	TEST_ASSERT_EQUAL_INT(116, result);
+	TEST_ASSERT_EQUAL_INT(20, result);
 }
 
-void test_module_generator_needs_to_be_implemented2(void)
+void test_subadd_1(void)
 {
-	args_t tmp;
+	args_t args1;
+	args1.a = 10;
+	args1.b = 5;
 
-	tmp.a = 10;
-	tmp.b = 5;
+	args_t args2;
+	args2.a = 10;
+	args2.b = 5;
 
-	addPointer_ExpectAndReturn(&tmp, 15);
+	// packageのcreateArgsモックの動作を定義する。
+	createArgs_ExpectAndReturn(10, 5, &args1);
+	// packageのaddArgsモックの動作を定義する。
+	addArgs_ExpectAndReturn(&args2, 15);
+	// packageのsubArgsモックの動作を定義する。
+	subArgs_ExpectAndReturn(&args2, 5);
+	int result = subadd(10, 5);
 
-	int result = calc3(10, 5);
-
-	TEST_ASSERT_EQUAL_INT(15, result);
+	TEST_ASSERT_EQUAL_INT(10, result);
 }

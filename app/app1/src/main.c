@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "calc2.h"
+#include "calc1.h"
 
 int main(void)
 {
@@ -8,3 +8,6 @@ int main(void)
 
 	return 0;
 }
+
+
+

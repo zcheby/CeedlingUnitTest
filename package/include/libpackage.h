@@ -10,7 +10,8 @@ typedef struct args
 int add(int a, int b);
 int sub(int a, int b);
 
-int addPointer(args_t *arg);
 args_t* createArgs(int a, int b);
+int addArgs(args_t *arg);
+int subArgs(args_t *arg);
 
 #endif // _LIBPACKAGE_H_

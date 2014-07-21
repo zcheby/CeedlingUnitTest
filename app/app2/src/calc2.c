@@ -1,27 +1,21 @@
-/*
- * calc2.c
- *
- *  Created on: 2014/07/21
- *      Author: YutaOura
- */
-
 #include <stdio.h>
-
 #include "calc2.h"
 #include "libpackage.h"
 
-int calc2(int a, int b)
+int addsub(int a, int b)
 {
-	args_t* ret = createArgs(a, b);
+	args_t* args = createArgs(a, b);
+	int ret1 = addArgs(args);
+	int ret2 = subArgs(args);
 
-	return ret->a + ret->b;
+	return ret1 + ret2;
 }
 
-int calc3(int a, int b)
+int subadd(int a, int b)
 {
-	args_t tmp;
-	tmp.a = a;
-	tmp.b = b;
+	args_t* args = createArgs(a, b);
+	int ret1 = addArgs(args);
+	int ret2 = subArgs(args);
 
-	return addPointer(&tmp);
+	return ret1 - ret2;
 }

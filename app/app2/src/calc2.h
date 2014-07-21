@@ -1,14 +1,9 @@
-/*
- * calc2.h
- *
- *  Created on: 2014/07/21
- *      Author: YutaOura
- */
+#ifndef calc2_H_
+#define calc2_H_
 
-#ifndef CALC2_H_
-#define CALC2_H_
+#include "libpackage.h"
 
-int calc2(int a, int b);
-int calc3(int a, int b);
+int addsub(int a, int b);
+int subadd(int a, int b);
 
-#endif /* CALC2_H_ */
+#endif /* calc2_H_ */
