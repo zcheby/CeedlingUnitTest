@@ -1,0 +1,10 @@
+{
+  "run_list": [
+    "recipe[ruby]",
+    "recipe[gem]",
+    "recipe[ceedling]"
+  ],
+  "automatic": {
+    "ipaddress": "ceedling"
+  }
+}
