@@ -23,6 +23,10 @@
 *.x86_64
 *.hex
 
+#Bundler
+vendor/**
+*.lock
+
 # etc..
 *.swp
 .DS_Store

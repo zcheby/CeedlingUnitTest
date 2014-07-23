@@ -1,3 +1,3 @@
-sourch "https://rubygems.org"
+source "https://rubygems.org"
 
 gem "knife-solo"
