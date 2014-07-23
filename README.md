@@ -11,6 +11,9 @@ Unityとは
 ---------
 C言語用のテストフレームワーク。
 
+TEST_ASSERT_EQUAL_INT等の他のテスト用関数は下記を参照。  
+[Unity Summary](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/Unity%20Summary.txt)
+
 Ceedlingとは
 ------------
 UnityとCMockを使ってテストを実行するためのテスト管理用フレームワーク。
@@ -57,16 +60,33 @@ UnityとCMockを使ってテストを実行するためのテスト管理用フ�
 │   └── src  
 │       └── libpackage.c <--------テスト対象が呼び出すパッケージ  
 ├── tools  
-│   └── ceedling         <--------Ceedling,Unity,CMockのインストールディレクトリ  
-│       ├── project.yml  
-│       ├── rakefile.rb  
-│       └── vendor  
-│           └── ceedling  
+　   └── ceedling         <--------Ceedling,Unity,CMockのインストールディレクトリ  
+　       ├── project.yml  
+　       ├── rakefile.rb  
+　       └── vendor  
+　       └── ceedling  
 ```
 
-TEST_ASSERT_EQUAL_INT等の他のテスト用関数は下記を参照。  
-[Unity Summary](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/Unity%20Summary.txt)
+chef-soloのインストール
+------------------------
+```sh
+$bundle install
+```
 
+Vagrantの起動
+-------------
+```sh
+$vagrant up
+$vagrant ssh-config --host ceedling >> ~/.ssh/config
+```
+
+Chef-soloにてゲストOSにruby,rubygems,ceedlingをインストール
+------------------------------------------------------------
+```sh
+$cd chef
+$bundle exec knife bootstrap ceedling
+$vagrant ssh-config --host ceedling >> ~/.ssh/config
+```
 
 テストの実行
 -------------
