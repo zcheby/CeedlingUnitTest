@@ -84,7 +84,8 @@ Chef-soloにてゲストOSにruby,rubygems,ceedlingをインストール
 ------------------------------------------------------------
 ```sh
 $cd chef
-$bundle exec knife bootstrap ceedling
+$bundle exec knife solo prepare ceedling
+$bundle exec knife solo cook ceedlin
 ```
 
 テストの実行
