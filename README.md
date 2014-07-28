@@ -85,7 +85,6 @@ Chef-soloにてゲストOSにruby,rubygems,ceedlingをインストール
 ```sh
 $cd chef
 $bundle exec knife bootstrap ceedling
-$vagrant ssh-config --host ceedling >> ~/.ssh/config
 ```
 
 テストの実行
